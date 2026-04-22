@@ -1,0 +1,2 @@
+// Image 0 (Night view) will be temple1.jpg
+// Image 1 (Day view) will be temple2.jpg

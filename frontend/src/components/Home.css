@@ -1,0 +1,342 @@
+.home-page {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(93, 0, 0, 0.95);
+    border-bottom: 2px solid var(--secondary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 50px;
+    filter: drop-shadow(0 0 5px var(--secondary));
+}
+
+.logo span {
+    font-family: 'Outfit', serif;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.lang-toggle {
+    background: var(--gold-gradient);
+    color: var(--primary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* News Ticker */
+.news-ticker {
+    background: #000;
+    color: var(--secondary);
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--primary);
+}
+
+.ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 30s linear infinite;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Hero Section */
+.hero-section {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(26, 0, 0, 0.2), rgba(26, 0, 0, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.decorative-rings {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.ring {
+    position: absolute;
+    border: 1px solid var(--secondary);
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.ring-1 {
+    width: 100%;
+    height: 100%;
+    animation: rotate 20s linear infinite;
+    border-style: dashed;
+}
+
+.ring-2 {
+    width: 80%;
+    height: 80%;
+    animation: rotate 15s linear reverse infinite;
+    border-style: double;
+    border-width: 3px;
+}
+
+.ring-3 {
+    width: 60%;
+    height: 60%;
+    animation: rotate 10s linear infinite;
+    border-style: dotted;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.cta-btn {
+    background: var(--gold-gradient);
+    color: var(--primary);
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.cta-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Sevas Section */
+.sevas-section {
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.sevas-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.sevas-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: var(--secondary);
+}
+
+.seva-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.seva-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--primary);
+    padding: 2.5rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.seva-card:hover {
+    border-color: var(--secondary);
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.seva-card h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.time {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.book-btn {
+    background: transparent;
+    color: var(--secondary);
+    border: 2px solid var(--secondary);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.book-btn:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+/* Timings Section */
+.timings-section {
+    padding: 5rem 5%;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.table-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    background: var(--primary);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--secondary);
+}
+
+.timings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.timings-table th {
+    background: var(--bg-dark);
+    color: var(--secondary);
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.timings-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+    padding: 3rem 5%;
+    text-align: center;
+    border-top: 1px solid var(--primary);
+    color: var(--text-muted);
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
